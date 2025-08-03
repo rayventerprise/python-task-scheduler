@@ -1,0 +1,61 @@
+name: Python CI/CD
+
+on:
+  push:
+    branches: [ "main", "develop" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.8", "3.9", "3.10", "3.11", "3.12"]
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install flake8 mypy
+    
+    - name: Lint with flake8
+      run: |
+        # Stop the build if there are Python syntax errors or undefined names
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        # Exit-zero treats all errors as warnings
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+    
+    - name: Type check with mypy
+      run: |
+        mypy lib/ --ignore-missing-imports
+    
+    - name: Test with Python
+      run: |
+        python -c "import server; import worker; import client; print('All modules import successfully')"
+        python -c "from lib import protocol, jobs, utils; print('All lib modules import successfully')"
+    
+    - name: Check code formatting
+      run: |
+        # Basic formatting check
+        python -c "
+        import ast
+        import os
+        for root, dirs, files in os.walk('.'):
+            for file in files:
+                if file.endswith('.py') and not file.startswith('__'):
+                    with open(os.path.join(root, file)) as f:
+                        try:
+                            ast.parse(f.read())
+                            print(f'✓ {file} syntax OK')
+                        except SyntaxError as e:
+                            print(f'✗ {file} syntax error: {e}')
+                            exit(1)
+        "
