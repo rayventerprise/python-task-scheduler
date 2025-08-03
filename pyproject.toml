@@ -9,7 +9,7 @@ description = "A low-level, asyncio-based distributed task scheduler"
 readme = "README.md"
 license = {text = "MIT"}
 authors = [
-    {name = "Your Name", email = "your.email@example.com"}
+    {name = "Ray", email = "ray@venterprise.io"}
 ]
 keywords = ["distributed computing", "asyncio", "task scheduler", "rpc"]
 classifiers = [
@@ -43,9 +43,9 @@ dts-worker = "worker:main"
 dts-client = "client:main"
 
 [project.urls]
-Homepage = "https://github.com/yourusername/distributed-task-scheduler"
-Repository = "https://github.com/yourusername/distributed-task-scheduler"
-Issues = "https://github.com/yourusername/distributed-task-scheduler/issues"
+Homepage = "https://github.com/rayventerprise/distributed-task-scheduler"
+Repository = "https://github.com/rayventerprise/distributed-task-scheduler"
+Issues = "https://github.com/rayventerprise/distributed-task-scheduler/issues"
 
 [tool.setuptools.packages.find]
 include = ["lib*"]
