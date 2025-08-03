@@ -43,9 +43,9 @@ dts-worker = "worker:main"
 dts-client = "client:main"
 
 [project.urls]
-Homepage = "https://github.com/rayventerprise/distributed-task-scheduler"
-Repository = "https://github.com/rayventerprise/distributed-task-scheduler"
-Issues = "https://github.com/rayventerprise/distributed-task-scheduler/issues"
+Homepage = "https://github.com/rayventerprise/python-task-scheduler"
+Repository = "https://github.com/rayventerprise/python-task-scheduler"
+Issues = "https://github.com/rayventerprise/python-task-scheduler/issues"
 
 [tool.setuptools.packages.find]
 include = ["lib*"]

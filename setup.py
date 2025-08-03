@@ -15,7 +15,7 @@ setup(
     description="A low-level, asyncio-based distributed task scheduler",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/rayventerprise/distributed-task-scheduler",
+    url="https://github.com/rayventerprise/python-task-scheduler",
     packages=find_packages(),
     classifiers=[
         "Development Status :: 3 - Alpha",
@@ -44,8 +44,8 @@ setup(
     },
     keywords="distributed computing, asyncio, task scheduler, rpc",
     project_urls={
-        "Bug Reports": "https://github.com/rayventerprise/distributed-task-scheduler/issues",
-        "Source": "https://github.com/rayventerprise/distributed-task-scheduler",
-        "Documentation": "https://github.com/rayventerprise/distributed-task-scheduler#readme",
+        "Bug Reports": "https://github.com/rayventerprise/python-task-scheduler/issues",
+        "Source": "https://github.com/rayventerprise/python-task-scheduler",
+        "Documentation": "https://github.com/rayventerprise/python-task-scheduler#readme",
     },
 ) 
