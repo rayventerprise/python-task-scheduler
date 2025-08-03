@@ -1,6 +1,6 @@
 # Distributed Task Scheduler (Python)
 
-![Python CI](https://github.com/yourusername/distributed-task-scheduler/actions/workflows/python-app.yml/badge.svg)
+![Python CI](https://github.com/rayventerprise/distributed-task-scheduler/actions/workflows/python-app.yml/badge.svg)
 
 A low-level, asyncio-based distributed task scheduler that coordinates workers to process tasks via a custom binary RPC protocol over TCP. This project demonstrates building a simple but efficient distributed computing system using Python's asyncio.
 
