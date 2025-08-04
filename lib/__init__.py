@@ -5,8 +5,8 @@ A collection of utilities and protocols for the distributed task scheduler.
 """
 
 __version__ = "0.1.0"
-__author__ = "Your Name"
-__email__ = "your.email@example.com"
+__author__ = "Ray"
+__email__ = ray@venterprise.io"
 
 from .protocol import encode_message, decode_message
 from .jobs import hash_string
